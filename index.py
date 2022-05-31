@@ -12,7 +12,7 @@ def inicio():
     return render_template('login.html')
 
 # Ruta principal
-@app.route('/')
+@app.route('/Registros.html')
 def principal():
     return render_template('Registros.html', registros=registros)
 
