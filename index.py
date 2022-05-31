@@ -17,8 +17,8 @@ def principal():
     return render_template('Registros.html', registros=registros)
 # Ruta principal
 @app.route('/Tienda.html')
-def tienda():
-    return render_template('Tienda.html', registros=registros)
+def tiendas():
+    return render_template('Tienda.html', tienda=tienda)
 
 #Ruta enviar 
 @app.route('/enviar', methods=['POST'])
@@ -44,13 +44,13 @@ def borrar():
 @app.route('/enviarT', methods=['POST'])
 def enviart():
     if request.method == 'POST':
-        nombre = request.form['nombre']
-        Telefono = request.form['Telefono']
-        estado = request.form['estado']
-        gerente = request.form['gerente']
+        nombret = request.form['nombret']
+        Telefonot = request.form['Telefonot']
+        estadot = request.form['estadot']
+        gerentet = request.form['gerentet']
 
 
-        tienda.append({'nombre': nombre, 'Telefono': Telefono, 'estado': estado, 'gerente': gerente })
+        tienda.append({'nombret': nombret, 'Telefonot': Telefonot, 'estadot': estadot, 'gerentet': gerentet })
 
         return redirect(url_for('tienda'))
             

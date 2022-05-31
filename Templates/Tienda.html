@@ -19,7 +19,7 @@
          <br>
          <table class="table table-bordered">
              <thead>
-                 <tr class="bg-warning p-2 text-dark bg-opacity-50">
+                 <tr class="bg-danger p-2 text-dark bg-opacity-50">
                      <th scope="col">Nombre del cliente</th>
                      <th scope="col">Numero de telefono</th>
                      <th scope="col">Estado</th>
@@ -28,12 +28,12 @@
              </thead>
              <!-- Comando sde mostrar en la tabla los datos ingresados por el formulario-->
              <tbody>
-                 {% for registros in tienda %}
+                 {% for registro in tienda %}
                  <tr>
-                     <th>{{registros.nombre}}</th>
-                     <th>{{registros.Telefono}}</th>
-                     <th>{{registros.estado}}</th>
-                     <th>{{registros.gerente}}</th>
+                     <th>{{registro.nombret}}</th>
+                     <th>{{registro.Telefonot}}</th>
+                     <th>{{registro.estadot}}</th>
+                     <th>{{registro.gerentet}}</th>
                  </tr>
                  {% endfor %}
              </tbody>
@@ -44,7 +44,7 @@
  </div>
  <!-- Boton borrar nos ayudará a eliminar todos los registros de la tabla-->
  <form action="{{url_for('borrarT')}}" method="post" class="card-body">
-     <center> <i class="fa fa-edit"><button type="submit" class="btn btn-warning ">Eliminar</i></button></center>
+     <center> <i class="fa fa-edit"><button type="submit" class="btn btn-danger ">Eliminar</i></button></center>
  </form>
  <br>
  <!--Formulario para gregar tareas con su respectivo y nivel de prioridad-->
@@ -63,30 +63,29 @@
                      <div class="form-group">
                          <label class="form-label">Nombre</label>
                          <input type="text" class="form-control" placeholder="Ingrese su nombre"
-                             name="nombre">
+                             name="nombret">
                      </div>
                      <!-- Ingresar el correo electronico-->
                      <div class="form-group">
                          <label class="form-label">Telefono</label>
                          <input type="number" class="form-control" placeholder="Ingrese su numero de celular"
-                             name="Telefono">
+                             name="Telefonot">
                      </div>
                      <!--Seleccionar el nivel de prioridad-->
                      <label class="form-label">Estado</label>
 
-                     <select class="form-select" aria-label="Default select example" name="estado">
+                     <select class="form-select" aria-label="Default select example" name="estadot">
                          <option selected>Seleccione el estado en el que se encuentra</option>
                          <option value="Normal">Normal</option>
                          <option value="Caso">Caso</option>
-                         <option value="Cercano">Cercano</option>
                      </select>
                      <div class="form-group">
                         <label class="form-label">Gerente</label>
                         <input type="text" class="form-control" placeholder="Ingrese el Gerente"
-                            name="gerente">
+                            name="gerentet">
                      <br>
                      <!-- Boton guardar nos permitira enviar los datos a la tabla-->
-                     <center><i class="fa fa-edit"><button class="btn btn-warning  p-2 bg-opacity-50"
+                     <center><i class="fa fa-edit"><button class="btn btn-danger  p-2 bg-opacity-50"
                                  type="submit">Guardar</i></button>
                      </center>
                  </div>
