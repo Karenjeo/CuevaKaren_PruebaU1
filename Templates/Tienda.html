@@ -28,12 +28,12 @@
              </thead>
              <!-- Comando sde mostrar en la tabla los datos ingresados por el formulario-->
              <tbody>
-                 {% for registro in tienda %}
+                 {% for tienda in tiendas %}
                  <tr>
-                     <th>{{registro.nombret}}</th>
-                     <th>{{registro.Telefonot}}</th>
-                     <th>{{registro.estadot}}</th>
-                     <th>{{registro.gerentet}}</th>
+                     <th>{{tienda.nombre}}</th>
+                     <th>{{tienda.Telefono}}</th>
+                     <th>{{tienda.estado}}</th>
+                     <th>{{tienda.gerente}}</th>
                  </tr>
                  {% endfor %}
              </tbody>
@@ -43,7 +43,7 @@
  </div>
  </div>
  <!-- Boton borrar nos ayudará a eliminar todos los registros de la tabla-->
- <form action="{{url_for('borrarT')}}" method="post" class="card-body">
+ <form action="{{url_for('borrart')}}" method="post" class="card-body">
      <center> <i class="fa fa-edit"><button type="submit" class="btn btn-danger ">Eliminar</i></button></center>
  </form>
  <br>
@@ -55,7 +55,7 @@
                  <h2>Registro de cliente</h2>
              </center>
          </div>
-         <form method="post" action="{{url_for('enviarT')}}">
+         <form method="post" action="{{url_for('enviart')}}">
              <div class="row justify-content-center">
                  <div class="col-md-7">
                      <br>
@@ -63,18 +63,18 @@
                      <div class="form-group">
                          <label class="form-label">Nombre</label>
                          <input type="text" class="form-control" placeholder="Ingrese su nombre"
-                             name="nombret">
+                             name="nombre">
                      </div>
                      <!-- Ingresar el correo electronico-->
                      <div class="form-group">
                          <label class="form-label">Telefono</label>
                          <input type="number" class="form-control" placeholder="Ingrese su numero de celular"
-                             name="Telefonot">
+                             name="Telefono">
                      </div>
                      <!--Seleccionar el nivel de prioridad-->
                      <label class="form-label">Estado</label>
 
-                     <select class="form-select" aria-label="Default select example" name="estadot">
+                     <select class="form-select" aria-label="Default select example" name="estado">
                          <option selected>Seleccione el estado en el que se encuentra</option>
                          <option value="Normal">Normal</option>
                          <option value="Caso">Caso</option>
@@ -82,7 +82,7 @@
                      <div class="form-group">
                         <label class="form-label">Gerente</label>
                         <input type="text" class="form-control" placeholder="Ingrese el Gerente"
-                            name="gerentet">
+                            name="gerente">
                      <br>
                      <!-- Boton guardar nos permitira enviar los datos a la tabla-->
                      <center><i class="fa fa-edit"><button class="btn btn-danger  p-2 bg-opacity-50"
