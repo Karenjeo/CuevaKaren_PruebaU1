@@ -41,8 +41,8 @@ def borrar():
             return redirect(url_for('principal'))
 
 #Ruta enviar 
-@app.route('/enviart', methods=['POST'])
-def enviarT():
+@app.route('/guardar', methods=['POST'])
+def guardar():
     if request.method == 'POST':
         nombre = request.form['nombre']
         Telefono = request.form['Telefono']
@@ -55,8 +55,8 @@ def enviarT():
         return redirect(url_for('tienda'))
             
 #Controlador de la ruta para borrar
-@app.route('/borrart', methods=['POST'])
-def borrarT():  
+@app.route('/eliminar', methods=['POST'])
+def eliminar():  
     if request.method == 'POST':
 
             tienda.clear()
